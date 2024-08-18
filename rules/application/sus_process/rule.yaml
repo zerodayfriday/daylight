@@ -1,0 +1,16 @@
+title: Suspicious Process Creation
+description: Detects suspicious process creation events
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: 4688
+    NewProcessName|endswith:
+      - '\powershell.exe'
+      - '\cmd.exe'
+    CommandLine|contains:
+      - '-encodedcommand'
+      - 'IEX'
+      - 'Invoke-Expression'
+  condition: selection

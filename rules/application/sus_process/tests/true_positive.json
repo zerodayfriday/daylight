@@ -1,0 +1,5 @@
+{
+    "EventCode": 4688,
+    "NewProcessName": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "CommandLine": "powershell.exe -encodedcommand ZWNobyAiaGVsbG8gd29ybGQi"
+}

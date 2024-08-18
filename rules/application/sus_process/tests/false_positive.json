@@ -1,0 +1,5 @@
+{
+    "EventCode": 4688,
+    "NewProcessName": "C:\\Windows\\System32\\notepad.exe",
+    "CommandLine": "notepad.exe C:\\example.txt"
+}
