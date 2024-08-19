@@ -1,6 +1,6 @@
 import subprocess
 import json
-from src.abstract.search_backend import AbstractSearchBackend
+from nitelight.abstract.search_backend import AbstractSearchBackend
 
 class SplunkSearchBackend(AbstractSearchBackend):
     def __init__(self, splunk_host, splunk_port, username, password):

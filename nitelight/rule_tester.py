@@ -1,7 +1,7 @@
 import os
 import json
-from src.implementations.splunk.rule_converter import SplunkRuleConverter
-from src.implementations.splunk.search_backend import SplunkSearchBackend
+from nitelight.plugins.splunk.rule_converter import SplunkRuleConverter
+from nitelight.plugins.splunk.search_backend import SplunkSearchBackend
 
 class RuleTester:
     def __init__(self, rule_converter, search_backend):

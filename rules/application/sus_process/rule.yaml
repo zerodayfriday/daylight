@@ -1,8 +1,10 @@
 title: Suspicious Process Creation
+id: 6f4191bb-912b-48a8-9ce7-682769541e6d
 description: Detects suspicious process creation events
+author: naphal@zerodayfri.day
 logsource:
+  category: process_access
   product: windows
-  service: security
 detection:
   selection:
     EventID: 4688

@@ -1,18 +1,16 @@
 import yaml
-from src.abstract.rule_converter import AbstractRuleConverter
+from nitelight.abstract.rule_converter import AbstractRuleConverter
 from sigma.backends.splunk import SplunkBackend
-from sigma.configuration import SigmaConfiguration
 from sigma.collection import SigmaCollection
+from sigma.exceptions import SigmaError
 
 class SplunkRuleConverter(AbstractRuleConverter):
-    def __init__(self, config_file):
-        with open(config_file, 'r') as config_yaml:
-            self.config = SigmaConfiguration(yaml.safe_load(config_yaml))
-        self.backend = SplunkBackend(self.config)
+    def __init__(self):
+        self.backend = SplunkBackend()
 
     def convert_rule(self, rule_content):
-        rule = SigmaCollection(yaml.safe_load(rule_content))
-        return self.backend.generate(rule)
+        rule = SigmaCollection.from_yaml(rule_content)
+        return self.backend.convert(rule)
 
     def bulk_convert_rules(self, rules_directory):
         # Implementation for bulk conversion
